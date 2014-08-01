@@ -1,0 +1,50 @@
+body {
+  background-color: #eeeeee;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+.centered {
+    text-align: center;
+}
+
+h1 {
+  text-align: center}
+
+#cropContainerHeaderButton{
+	color: #FFF;
+	margin: 0 auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 15px 50px;
+	width: 400px;
+	display: block;
+	text-align: center;
+	font-weight: 400;
+	background: #2CE987;
+	text-transform: uppercase;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#cropContainerHeaderButton:hover {
+	background: #1CD139;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+#cropOutput {
+  width:546px;
+  padding:5px 1%;
+  margin:15px auto;
+  display:block;
+  border: 1px solid #CCC;
+  text-transform: none;
+  text-align: center;
+}

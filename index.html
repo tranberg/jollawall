@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JollaWall - Instantly create ambiance wallpapers for your Jolla.">
+  <meta name="keywords" content="Jolla,Sailfish,SailfishOS,wallpaper">
+  <meta name="author" content="Bo Tranberg - botranberg.dk" >
+  <title>JollaWall</title>
+
+  <!-- Bootstrap styles -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Croppic styles -->
+  <link href="css/croppic.css" rel="stylesheet">
+  <!-- Jollawall styles -->
+  <link href="css/jw.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Welcoming title -->
+  <div class="container centered">
+	<div class="row centered">
+	  <div class="col-lg-12" style="padding-bottom: 5px;">
+		<h1>JollaWall<small>beta</small></h1>
+		<p>Instantly create ambiance wallpapers for your Jolla.</p>
+		<button class="btn btn-default btn-md" data-toggle="modal" data-target="#help">Need help?</button>
+		<button class="btn btn-default btn-md" data-toggle="modal" data-target="#about">Curious?</button>
+	  </div>
+	</div>
+  </div>
+
+  <!-- CROP IMAGE -->
+  <div class="container">
+	<div class="row centered" id="crop">
+	  <div class="col-lg-12 cropHeaderWrapper">
+				  <span id="cropContainerHeaderButton">click here to start</span>
+				  <div id="croppic"></div>
+				  <p> </p>
+				  <input type="text" id="cropOutput" value="Download link will be displayed here after crop"/>
+			  </div>
+		  </div>
+	  </div>
+
+  <!-- Help modal -->
+  <div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		  <h4 class="modal-title" id="myModalLabel">Help</h4>
+		</div>
+		<div class="modal-body">
+		  <p><strong>Three easy steps</strong> to create an ambiance wallpaper for your Jolla:</p>
+		  <ol>
+			<li>Hit the big green button to upload your image. Make sure its dimensions are at least 540&times1600 pixels.</li>
+			<li>After uploading a panel of <em>zoom</em>, <em>crop</em> and <em>cancel</em> buttons will appear in the top right corner. Drag and zoom your image until satisfied.</li>
+			<li>After cropping a download link will be displayed at the bottom of the page.</li>
+		  </ol>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+  <!-- About modal -->
+  <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		  <h4 class="modal-title" id="myModalLabel">About JollaWall</h4>
+		</div>
+		<div class="modal-body">
+		  <p>
+			Having spent some time in Gimp creating ambiance wallpapers for my Jolla I thought it would be nice to have a fast and easy tool for doing so.
+			I soon found <a href="http://www.croppic.net">Croppic</a>, a jQuery plugin for cropping pictures, and then JollaWall was created.
+		  </p>
+		  <p>My original inspiration comes from <a href="http://www.jollausers.com/2013/12/how-to-make-ambiance-wallpapers-for-sailfish-bonus/">this site</a>, which explains why the dimensions of the image should be 540&times1600 pixels.
+		  I have previously made a package of wallpapers available <a href="http://botranberg.dk/post/ambiance-wallpapers-for-jolla/">here</a>.</p>
+		  <p>You can find the source on <a href="https://github.com/tranberg/jollawall">GitHub</a>.</p>
+		  <p><a href="http://www.botranberg.dk/page/about/">Contact</a></p>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+  <!-- IMPORT SCRIPTS -->
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Croppic plugins -->
+  <script src="js/croppic.js"></script>
+  <script>
+	  var croppicHeaderOptions = {
+			  uploadUrl:'img_save_to_file.php',
+			  cropData:{
+				  "dummyData":1,
+				  "dummyData2":"asdas"
+			  },
+			  cropUrl:'img_crop_to_file.php',
+			  outputUrlId:'cropOutput',
+			  customUploadButtonId:'cropContainerHeaderButton',
+			  modal:false,
+			  loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> ',
+	  }
+	  var croppic = new Croppic('croppic', croppicHeaderOptions);
+  </script>
+  <script>
+	$(document).ready(function() {
+	  var val = document.getElementById("cropOutput").value;
+	  //alert(val)
+	  if (val.length>0) {
+		//alert('derp');
+	  }
+	});
+  </script>
+</body>
+</html>

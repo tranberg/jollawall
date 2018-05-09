@@ -11,4 +11,4 @@ My original inspiration comes from [this site](http://www.jollausers.com/2013/12
 
 This is a beta version, that functions somewhat satisfactory. This repository is not linked to Croppic, so it's just a snapshot, that wont receive updates. I chose to do this because I have made some alterations.
 
-Try the code [here](http://jollawall.tberg.dk)
+Read more about ambiances [here](https://tberg.dk/post/ambiance-wallpapers-for-jolla/)
